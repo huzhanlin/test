@@ -1,0 +1,44 @@
+$r: 1rem/23.44
+
+$navHeight: 40rem/$r
+$blogHeaderHeight: 52rem/$r
+
+@mixin column()
+  display: flex
+  flex-direction: column
+  
+@mixin flex($justify, $align)
+  display: flex
+  justify-content: $justify
+  align-items: $align
+
+@mixin font($color, $size)
+  color: $color
+  font-size: $size
+
+@mixin align($align)
+  display: flex
+  flex-wrap: wrap
+  align-content: $align
+
+@mixin title-before($width,$height,$top,$left,$color)
+  position: relative
+  &:after
+    content: ""
+    position: absolute
+    width: $width
+    height: $height
+    top: $top
+    left: $left
+    background-color: $color
+
+@mixin text-overflow()
+  text-overflow: ellipsis
+  overflow: hidden
+  white-space: nowrap
+
+
+@mixin setbackground()
+  background-size: cover
+  background-position: 50% 50%
+  background-repeat: no-repeat
